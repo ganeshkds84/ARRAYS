@@ -1,5 +1,5 @@
 class Gowtham():
-    def four_sum(self,nums):
+    def four_sum(self,nums,target):
         final=[]
         nums=sorted(nums)
         for i in range(len(nums)-3):
@@ -19,7 +19,7 @@ class Gowtham():
                     t4=nums[l]
                     req=t1+t2+t3+t4
                     
-                    if req==0:
+                    if req==target:
                         final.append([t1,t2,t3,t4])
                         k+=1
                         l-=1
@@ -27,7 +27,7 @@ class Gowtham():
                             k+=1
                         while k<l and nums[l]==nums[l+1]:
                             l-=1
-                    elif req>0:
+                    elif req>target:
                         l-=1
                     else:
                         k+=1
@@ -36,7 +36,7 @@ class Gowtham():
                 
         
 ansr=Gowtham()
-print(ansr.four_sum([1,0,-1,0,-2,2]))
+print(ansr.four_sum([1,0,-1,0,-2,2],3))
 
 
     
